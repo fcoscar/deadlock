@@ -1,12 +1,13 @@
 ﻿using PruebaTecnica.Dominio;
+using PruebaTecnica.Infrastructure.Persistance;
 
 namespace PruebaTecnica.Application.Clientes;
 
-public class ClienteRepository : IClientesRepository
+public class ClienteRepository(Context db) : IClientesRepository
 {
-    public Task<Dominio.Clientes> Add(Dominio.Clientes cliente, CancellationToken ct)
+    public async Task Add(Dominio.Clientes cliente, CancellationToken ct)
     {
-        
+        await db.Clientes.AddAsync(cliente, ct);
     }
     
     

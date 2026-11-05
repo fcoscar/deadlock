@@ -2,5 +2,5 @@
 
 public interface IClientesRepository
 {
-    Task<Clientes> Add(Clientes cliente, CancellationToken ct);
+    Task Add(Clientes cliente, CancellationToken ct);
 }

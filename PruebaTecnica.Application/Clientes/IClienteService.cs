@@ -2,5 +2,5 @@
 
 public interface IClienteService
 {
-    Task<Dominio.Clientes> Add(Dominio.Clientes clientes, CancellationToken ct);
+    Task<Result<ClientesDtos.ClienteRes>> Add(ClientesDtos.CreateClienteReq clientes, CancellationToken ct);
 }
